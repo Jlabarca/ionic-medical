@@ -1,0 +1,11 @@
+{
+  "name": "CentroUC",
+  "app_id": "5f18e6f0",
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
+}

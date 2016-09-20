@@ -1,0 +1,40 @@
+<ion-view view-title="Home">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero" style="background-image: url('img/profile-bg.jpg');">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/2.png');"></div>
+                <h3><a>Name Surname</a></h3>
+                <h4>03/05/2016</h4>
+            </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.tips" class="tab-item" style = "opacity: 1;">
+                <i class="icon ion-lightbulb"></i> Tips
+            </a>
+            <a ui-sref="app.calendario" class="tab-item" style = "opacity: 1;">
+                <i class="icon ion-ios-calendar"></i> Calendar
+            </a>
+            <a ui-sref="app.graficos" class="tab-item" style = "opacity: 1;">
+                <i class="icon ion-arrow-graph-up-right"></i> Charts
+            </a>
+        </div>
+
+  <br>
+        <button class="button button-full button-calm" ui-sref="app.ficha">
+          My clinical profile
+        </button>
+        <button class="button button-full button-balanced">
+          Info
+        </button>
+        <button class="button button-full button-royal">
+          Info2
+        </button>
+        <button class="button button-full button-positive">
+          Info3
+        </button>
+
+
+        </ion-view>
+        </div>
+    </ion-content>
+</ion-view>

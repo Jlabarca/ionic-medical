@@ -1,0 +1,48 @@
+<ion-view view-title="Tips">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+
+	<ion-content class="padding" overflow-scroll="false">
+	<div class="container-fluid">
+    <ion-nav-buttons side="right">
+
+    </ion-nav-buttons>
+
+	  <timeline side="{{side}}">
+	    <!-- can also hard-code to side="left" or side="right" -->
+	    <timeline-event ng-repeat="event in events" side="{{side}}" type="item-text-wrap" href="#/tab/tips/{{event.id}}">
+	      <!-- uses angular-scroll-animate to give it some pop -->
+	      <timeline-badge class="tm tm-scroll {{event.badgeClass ? event.badgeClass : 'bg-dark' }} timeline-hidden"
+	                      when-visible="animateElementIn" when-not-visible="animateElementOut">
+	        <i class="glyphicon {{event.badgeIconClass}}"></i>
+	      </timeline-badge>
+
+	      <!-- uses angular-scroll-animate to give it some pop -->
+	      <timeline-panel class="{{event.badgeClass}} tm timeline-hidden"
+	                      when-visible="animateElementIn" when-not-visible="animateElementOut">
+	        <timeline-heading class = "text-center">
+            <img ng-src="{{event.imagen}}">
+
+	          <h4>{{event.titulo}}</h4>
+
+            <a href="#/app/tips/{{event.id}}" class="button button-outline icon-right  button-balanced" style = "padding: 0.2rem 1rem;">Read</a>
+	          <p ng-if="event.when">
+	            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{event.descripcion}}</small>
+	          </p>
+	          <p ng-if="event.titleContentHtml" ng-bind-html="event.titleContentHtml">
+	          </p>
+	        </timeline-heading>
+	        <p ng-bind-html="event.contentHtml"></p>
+	        <timeline-footer ng-if="event.footerContentHtml">
+	          <span ng-bind-html="event.footerContentHtml"></span>
+	        </timeline-footer>
+	      </timeline-panel>
+	    </timeline-event>
+	  </timeline>
+	</div>
+
+  <button class="button button-full mygreen"  ng-click="defaultAlign()">
+    Change side
+  </button>
+	</ion-content>
+
+</ion-view>

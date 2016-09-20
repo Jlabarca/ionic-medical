@@ -1,0 +1,20 @@
+
+  <ion-view view-title=Calendar>
+
+
+
+      <ion-content scroll="false" class="main-content">
+
+        <h1 class="text-center">{{viewTitle}}</h1>
+
+          <calendar ng-model="calendar.currentDate" calendar-mode="calendar.mode" event-source="calendar.eventSource"
+                    range-changed="reloadSource(startTime, endTime)"
+                    event-selected="onEventSelected(event)" title-changed="onViewTitleChanged(title)"
+                    time-selected="onTimeSelected(selectedTime)" step="30">
+          </calendar>
+          <button class="button button-full mygreen"  ui-sref="app.evento">
+            Add Event
+          </button>
+      </ion-content>
+
+  </ion-view>
